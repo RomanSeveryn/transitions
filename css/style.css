@@ -60,40 +60,33 @@ body {
   box-shadow: inset 0px 0px 28px -8px rgba(0, 0, 0, 0.75);
 }
 
-.link::after {
+.link::after , .link::before {
   content: "";
   display: block;
 
   position: absolute;
+
+  transition: width ease-in-out 0.3s;
+
+  width: 0px;
+  height: 0.5em;
+  background-color: black;
+}
+
+.link::after {
   top: 115%;
   left: 0;
 
-  transition: width ease-in-out 0.3s;
-
-  width: 0px;
-  height: 0.5em;
-  background-color: black;
+  
 }
 .link::before {
-  content: "";
-  display: block;
-
-  position: absolute;
   bottom: 115%;
   left: 0;
-
-  transition: width ease-in-out 0.3s;
-
-  width: 0px;
-  height: 0.5em;
-  background-color: black;
+  
 }
 
-.link:hover::before{
-  width: 100%;
-}
-
-.link:hover::after{
+.link:hover::before,
+.link:hover::after {
   width: 100%;
 }
 
